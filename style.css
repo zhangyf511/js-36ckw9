@@ -1,0 +1,26 @@
+@import '~leaflet/dist/leaflet.css';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+h1,
+h2 {
+  font-family: Lato;
+}
+#map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background: transparent;
+  opacity: 0.8;
+}
+#amap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
