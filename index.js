@@ -34,7 +34,6 @@ var amap = new AMap.Map('amap', {
 const map = new Map('map', {
   renderer: new Canvas(),
 });
-map.setView([39.909186, 116.397411], 8);
 
 // Map和高德地图耦合
 map.on('zoom', (evt) => {
@@ -44,6 +43,8 @@ map.on('move', (evt) => {
   const pt = evt.target.getCenter();
   amap.setZoomAndCenter(evt.target.getZoom(), [pt.lng, pt.lat]);
 });
+//设置视图
+map.setView([39.95286642741858, 116.3911235332489], 12);
 
 // 1个点
 new Marker([39.909176, 116.397411], {
@@ -107,5 +108,9 @@ const layerGroup = new GeoJSON(geoData, {
 // layerGroup.addTo(map);
 //====多个点end========
 layerGroup.addTo(map).bindPopup((layer) => {
-  return layer.feature.properties('NAME');
+  return (
+    '<p>Hello world!<br />This is a nice popup of ' +
+    layer.feature.properties['NAME'] +
+    '</p>'
+  );
 });
